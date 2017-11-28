@@ -7,6 +7,9 @@ module.exports = function(app) {
     .post(bluehunter.insert);
 
 
-  app.route('/search/:id')
+  app.route('/searchs/:id')
     .get(bluehunter.search);
+
+  app.route('/book/by-author/:author_part')
+    .get(bluehunter.searchByAuthor);
 };  

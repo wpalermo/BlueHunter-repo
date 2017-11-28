@@ -1,24 +1,27 @@
 'use strict';
 
 
-var mongoose = require('mongoose'),
-bhdb = mongoose.model('bhdb');
+var mongoose = require('mongoose');
+var books = mongoose.model('books');
+
+
+exports.listAllBooks = function(req, res){
+
+    books.find({}, function(err, book) {
+        if(err)
+            res.send(err);
+        res.json(book)
+    });
+};
 
 exports.insert = function(req, res) {
     
-    var newData = new bhdb(req.body);
-    console.log('--- NEW DATA: ---- ' + req.body);
-    
-    debugger;
-    newData.save(function(err, data){
-        console.log('DATA: ' + data);
-
+    var newBook = new books(req.body);
+    newBook.save(function(err, data){
         if(err)
             res.send(err);
         res.json(data);
     });
-
-    //res.send(' {"insert" : "insert"}');
 };
 
 
@@ -27,4 +30,14 @@ exports.insert = function(req, res) {
 exports.search = function(req, res) {
     var id = req.params.id;
     res.send('search - id: ' + id);
+};
+
+
+exports.searchByAuthor = function(req, res) {
+    var author = req.params.author_part;
+    books.findById(author, function(err, book){
+        if(err)
+            res.send(err);
+        res.json(book);
+    });
 };

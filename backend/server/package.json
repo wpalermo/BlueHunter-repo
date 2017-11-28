@@ -6,7 +6,8 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "nodemon server.js",
-    "debug": "nodemon --inspect server.js"
+    "debug": "node inspect server.js",
+    "node-inspect": "nodemon --debug server.js"
   },
   "repository": {
     "type": "git",
@@ -23,8 +24,10 @@
   },
   "homepage": "https://github.com/wpalermo/BlueHunter-repo#readme",
   "dependencies": {
+    "body-parser": "^1.18.2",
     "express": "^4.16.2",
-    "mongoose": "^4.13.5"
+    "mongoose": "^4.13.5",
+    "mongoose-sequence-plugin": "^1.0.5"
   },
   "devDependencies": {
     "log": "^1.4.0",

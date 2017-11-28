@@ -2,23 +2,44 @@
 var mongoose = require('mongoose');
 var Schema = mongoose.Schema;
 
+var sequenceGenerator = require('mongoose-sequence-plugin');
 
-var TaskSchema = new Schema({
-  name: {
+var pluginOptions = {field: 'id',
+                     startAt: 1,
+                     prefix: '',
+                     maxSaveRetries: 2 };
+
+/** Schema de livros */
+var booksSchema = new Schema({
+  title: {
     type: String,
-    required: 'Kindly enter the name of the task'
+    required: 'Insert the book name'
   },
-  Created_date: {
+  author: {
+    type: String,
+    required: 'Insert the author name'
+  },
+  creation_date: {
     type: Date,
     default: Date.now
-  },
-  status: {
-    type: [{
-      type: String,
-      enum: ['pending', 'ongoing', 'completed']
-    }],
-    default: ['pending']
   }
 });
 
-module.exports = mongoose.model('bhdb', TaskSchema);
+
+/** schema de usuario  */
+var userSchema = new Schema({
+  name: {
+    type: String,
+    required: 'Insert the book name'
+  },
+  creation_date: {
+    type: Date,
+    default: Date.now
+  }
+});
+
+booksSchema.plugin(sequenceGenerator, pluginOptions);
+
+
+module.exports = mongoose.model('books', booksSchema);
+module.exports = mongoose.model('users', userSchema);
