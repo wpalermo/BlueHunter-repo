@@ -1,0 +1,33 @@
+{
+  "name": "server",
+  "version": "1.0.0",
+  "description": "backend bluehunter",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon server.js",
+    "debug": "nodemon --inspect server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/wpalermo/BlueHunter-repo.git"
+  },
+  "keywords": [
+    "blue",
+    "hunter"
+  ],
+  "author": "wpalermo",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/wpalermo/BlueHunter-repo/issues"
+  },
+  "homepage": "https://github.com/wpalermo/BlueHunter-repo#readme",
+  "dependencies": {
+    "express": "^4.16.2",
+    "mongoose": "^4.13.5"
+  },
+  "devDependencies": {
+    "log": "^1.4.0",
+    "nodemon": "^1.12.1"
+  }
+}
