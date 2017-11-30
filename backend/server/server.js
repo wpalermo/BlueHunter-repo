@@ -20,4 +20,7 @@ routes(app); //register the route
 
 app.listen(port);
 
-console.log('todo list RESTful API server started on: ' + port);
+console.log('----------------------------');
+console.log('BlueHunter server started.');
+console.log('Port: ' + port);
+console.log('----------------------------');

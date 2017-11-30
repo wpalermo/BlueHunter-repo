@@ -17,11 +17,32 @@ exports.listAllBooks = function(req, res){
 exports.insert = function(req, res) {
     
     var newBook = new books(req.body);
+    debugger;
     newBook.save(function(err, data){
         if(err)
             res.send(err);
         res.json(data);
     });
+};
+
+exports.insertList = function(req, res) {
+    var book;
+    var responseData;
+    debugger;
+
+    req.body.forEach(element => {
+        var newBook = new books(element);
+        newBook.save(function(err, data){
+            debugger;
+            if(err)
+                 res.send(err);
+            responseData += data;
+
+        });
+    });
+
+    debugger;
+    res.json(responseData);
 };
 
 

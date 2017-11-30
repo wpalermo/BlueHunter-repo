@@ -6,6 +6,9 @@ module.exports = function(app) {
   app.route('/insert')
     .post(bluehunter.insert);
 
+  app.route('/insertList')
+    .post(bluehunter.insertList);
+
 
   app.route('/searchs/:id')
     .get(bluehunter.search);
