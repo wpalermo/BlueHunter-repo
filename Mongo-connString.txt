@@ -1,0 +1,1 @@
+mongo "mongodb://cluster0-ibm-shard-00-00-hogza.mongodb.net:27017,cluster0-ibm-shard-00-01-hogza.mongodb.net:27017,cluster0-ibm-shard-00-02-hogza.mongodb.net:27017/test?replicaSet=Cluster0-ibm-shard-0" --authenticationDatabase admin --ssl --username wpalermo --password <PASSWORD>
