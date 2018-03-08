@@ -1,4 +1,4 @@
-# Blue Hunter - Estamos contratando!
+# Blue Hunter!
 
 
 **Blue Hunter** é uma empresa fictícia cujas demandas de desenvolvimento de software têm aumentado muito nos últimos meses. Tentando manter-se sempre atualizada, busca novos desenvolvedores de software que sejam capazes de solucionar problemas de forma eficaz e elegante.
